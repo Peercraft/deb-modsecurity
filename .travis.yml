@@ -1,0 +1,33 @@
+sudo: required
+language: generic
+
+cache:
+  directories:
+  - $HOME/.cache
+
+env:
+  global:
+  - VERSION=3.0.0 RELEASE=1
+  matrix:
+  - OS=debian DIST=stretch
+
+services:
+- docker
+
+script:
+- git submodule update --init --recursive
+#- git describe --long
+- git clone --depth 1 https://github.com/Peercraft/packpack.git packpack
+- packpack/packpack
+
+deploy:
+  provider: packagecloud
+  username: ${PACKAGECLOUD_USER}
+  repository: ${PACKAGECLOUD_REPO}
+  token: ${PACKAGECLOUD_TOKEN}
+  dist: ${OS}/${DIST}
+  package_glob: build/*.{deb,rpm}
+  skip_cleanup: true
+  on:
+    branch: master
+    condition: -n "${OS}" && -n "${DIST}" && -n "${PACKAGECLOUD_TOKEN}"
