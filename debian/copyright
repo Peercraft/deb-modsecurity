@@ -1,0 +1,4 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Debianized-By: Casper Biering <cb@peercraft.com>
+Upstream-Name: modsecurity
+Source: https://github.com/SpiderLabs/ModSecurity

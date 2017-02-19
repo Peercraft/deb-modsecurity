@@ -1,0 +1,5 @@
+modsecurity (3.0.0-1) unstable; urgency=medium
+
+  * Initial release.
+
+ -- Casper Biering <cb@peercraft.com>  Sat, 18 Feb 2017 21:14:21 +0000
