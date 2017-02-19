@@ -1,0 +1,12 @@
+Source: modsecurity
+Section: web
+Priority: optional
+Maintainer: Casper Biering <cb@peercraft.com>
+Build-Depends: debhelper (>= 9), dh-autoreconf, flex, bison, pkg-config, libgeoip-dev, libyajl-dev, liblmdb-dev, libxml2-dev, libpcre3-dev, libcurl4-gnutls-dev, doxygen
+Homepage: https://modsecurity.org/
+
+Package: modsecurity
+Architecture: any
+Depends: libxml2, ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: foreign
+Description: Open Source Web Application Firewall
